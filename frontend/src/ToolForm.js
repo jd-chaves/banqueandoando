@@ -18,7 +18,7 @@ class ToolForm extends React.Component{
     this.state = {
       tipo : "",  //Tipo Crédito
       pp : "",    //Periodo en el que se piensa pagar
-      tipoCreditoViv: ""  //Tipo crédito vivienda
+      tipoCreditoViv: ""
     };
   }
 
@@ -53,14 +53,17 @@ class ToolForm extends React.Component{
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
+      if(!err){
       values = {
         tipo : this.state.tipo,  //Tipo Crédito
         pp : this.state.pp, //Periodo en el que se piensa pagar
-        tipoCreditoViv: this.state.tipoCreditoViv  //Tipo crédito vivienda
+        tipoCreditoViv: this.state.tipoCreditoViv,  //Tipo crédito vivienda
+        monto: parseInt(values.monto, 0) //Monto crédito
       }
       console.log('Received values of form: ', values);
+      this.showInfo();
+    }
     });
-    this.showInfo();
   }
 
   handleCreditChange = (e) => {
@@ -78,10 +81,10 @@ class ToolForm extends React.Component{
   }
 
   render(){
+    const { getFieldDecorator } = this.props.form;
     return(
       <Form onSubmit={this.handleSubmit} style={{height: "200px", width: "35%",  margin: "0 auto"}}>
       <FormItem>
-
         <Select placeholder="Tipo de crédito" onChange={this.handleCreditChange} >
         <Option value="consumo">Crédito de consumo</Option>
         <Option value="ordinario">Crédito comercial ordinario</Option>
@@ -90,7 +93,6 @@ class ToolForm extends React.Component{
         <Option value="vivienda">Crédito de vivienda</Option>
         <Option value="microcredito">Microcrédito</Option>
         </Select>
-
       </FormItem>
       {
         (this.state.tipo === "consumo" || this.state.tipo === "preferencial" || this.state.tipo === "microcredito") && (
@@ -101,14 +103,6 @@ class ToolForm extends React.Component{
             <Option value="tipo3">Entre 1096 y 1825 días</Option>
             <Option value="tipo4">A más de 1825 días</Option>
             </Select>
-
-          <div>
-          <InputNumber style={{ width: "27vw", marginTop: "5vh"}}
-          defaultValue={20000000}
-          formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-          parser={value => value.replace(/\$\s?|(,*)/g, '')}
-          />
-          </div>
           </FormItem>)
         } {
           (this.state.tipo === "ordinario") && (
@@ -120,14 +114,6 @@ class ToolForm extends React.Component{
               <Option value="tipo4">Entre 1096 y 1825 días</Option>
               <Option value="tipo5">A más de 1825 días</Option>
               </Select>
-
-            <div>
-            <InputNumber style={{ width: "27vw", marginTop: "5vh"}}
-            defaultValue={20000000}
-            formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-            parser={value => value.replace(/\$\s?|(,*)/g, '')}
-            />
-            </div>
             </FormItem>)
           } {
             (this.state.tipo === "tesoreria") && (
@@ -138,18 +124,10 @@ class ToolForm extends React.Component{
                 <Option value="tipo3">Entre 15 y 30 días</Option>
                 </Select>
 
-              <div>
-              <InputNumber style={{ width: "27vw", marginTop: "5vh"}}
-              defaultValue={20000000}
-              formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-              parser={value => value.replace(/\$\s?|(,*)/g, '')}
-              />
-              </div>
               </FormItem>)
             } {
               (this.state.tipo === "vivienda") && (
                 <FormItem>
-
                 <Popover content={cont} trigger="hover" placement="bottomLeft" title="*">
                 <Select placeholder="Modalidad*" onChange={this.handleVivChange}>
                 <Option value="tipo1">Construir - UVR - VIS</Option>
@@ -162,14 +140,6 @@ class ToolForm extends React.Component{
                 <Option value="tipo8">Adquirir - Pesos - No VIS</Option>
                 </Select>
                 </Popover>
-
-                <div>
-                <InputNumber style={{ width: "27vw", marginTop: "5vh"}}
-                defaultValue={20000000}
-                formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
-                parser={value => value.replace(/\$\s?|(,*)/g, '')}
-                />
-                </div>
                 </FormItem>)
               } {
                 (this.state.tipo === "vivienda" && this.state.tipoCreditoViv !== "") && (
@@ -181,7 +151,17 @@ class ToolForm extends React.Component{
                 } {
                   (this.state.tipo !== "vivienda" && this.state.pp !== "") && (
                     <FormItem>
-                    <Button type="primary" htmlType="submit" className="login-form-button">
+
+                    {getFieldDecorator('monto', {
+                      rules: [{ required: true, message: 'Ingrese un monto' }],
+                    })(
+                      <InputNumber style={{ width: "33.4vw"}}
+                      formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                      parser={value => value.replace(/\$\s?|(,*)/g, '')}
+                      />
+                    )}
+
+                    <Button type="primary" htmlType="submit" className="login-form-button" style={{ marginTop: "3vh"}}>
                     Calcular
                     </Button>
                     </FormItem>)
