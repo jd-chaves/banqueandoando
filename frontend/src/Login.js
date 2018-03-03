@@ -38,7 +38,53 @@ class NormalLoginForm extends React.Component {
       }
     });
   }
-
+  doSignUp = (data) => {
+        fetch('http://localhost:8080/api/usuario', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values)
+        })
+        .then((response) => response.json())
+        .then((responseJson) => {
+          if(!responseJson.success)
+          this.setState({mU:responseJson.message});
+          else
+          this.setState({mU:''});
+          return console.log(responseJson);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+  }
+  doSignIn = (data) => {
+    e.preventDefault();
+    this.props.form.validateFields((err, values) => {
+      if (!err) {
+        fetch('http://localhost:8080/api/authenticate', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(values)
+        })
+        .then((response) => response.json())
+        .then((responseJson) => {
+          if(!responseJson.success)
+          this.setState({mU:responseJson.message});
+          else
+          this.setState({mU:''});
+          return console.log(responseJson);
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+      }
+    });
+  }
   rerender = () =>{
     if(this.state.account){
       this.setState({account:false});

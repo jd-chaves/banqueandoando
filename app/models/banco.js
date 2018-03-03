@@ -14,7 +14,7 @@ imagen: String,
 consumo: ConsumoSchema,
 micro: MicroSchema,
 ordinario: OrdinarioSchema,
-preferenciale: PreferencialSchema,
+preferencial: PreferencialSchema,
 tesoreria: TesoreriaSchema,
 vivienda: ViviendaSchema,
 votos: Number

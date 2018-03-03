@@ -32,8 +32,13 @@ module.exports = function(express) {
     user.password = req.body.password;
     user.save(function(err) {
       if (err) {
+        // duplicate entry
+        if (err.code == 11000)
+        return res.json({ success: false, message: 'Ya existe un usuario con ese login. '});
+        else
         return res.send(err);
       }
+
     });
     res.json({ success: true, message: "Usuario agregados" });
 
@@ -85,6 +90,7 @@ module.exports = function(express) {
       if (!user) {
         res.json({
           success: false,
+          code: 2,
           message: "El nombre de usuario no existe."
         });
       } else if (user) {
@@ -119,6 +125,8 @@ module.exports = function(express) {
 
     });
   });
+
+
 
   // Obtener bancos mejores puntuados--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   apiRouter.get("/mejoresBancos", function(req, res) {
