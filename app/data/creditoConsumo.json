@@ -1,0 +1,268 @@
+[
+   {
+      "banco":"Av Villas",
+      "tipo1":22.74,
+      "tipo2":21.08,
+      "tipo3":19.26,
+      "tipo4":15.74
+   },
+   {
+      "banco":"BANCO CAJA SOCIAL",
+      "tipo1":25.76,
+      "tipo2":25.57,
+      "tipo3":23.52,
+      "tipo4":15.05
+   },
+   {
+      "banco":"BANCO W S.A.",
+      "tipo1":-1,
+      "tipo2":-1,
+      "tipo3":-1,
+      "tipo4":16.89
+   },
+   {
+      "banco":"BBVA Colombia",
+      "tipo1":17.22,
+      "tipo2":18.21,
+      "tipo3":18.22,
+      "tipo4":15.44
+   },
+   {
+      "banco":"Banagrario",
+      "tipo1":29.01,
+      "tipo2":10.54,
+      "tipo3":11.18,
+      "tipo4":8.48
+   },
+   {
+      "banco":"Banco Davivienda",
+      "tipo1":16.96,
+      "tipo2":25.25,
+      "tipo3":20.45,
+      "tipo4":17.33
+   },
+   {
+      "banco":"Banco Falabella S.A.",
+      "tipo1":25.05,
+      "tipo2":24.81,
+      "tipo3":24.23,
+      "tipo4":28.67
+   },
+   {
+      "banco":"Banco GNB Sudameris",
+      "tipo1":11.09,
+      "tipo2":18.39,
+      "tipo3":17.95,
+      "tipo4":18.13
+   },
+   {
+      "banco":"Banco Mundo Mujer S.A.",
+      "tipo1":30.97,
+      "tipo2":30.9,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"Banco Pichincha S.A.",
+      "tipo1":29.14,
+      "tipo2":18.2,
+      "tipo3":18.91,
+      "tipo4":16.68
+   },
+   {
+      "banco":"Banco Popular",
+      "tipo1":16.33,
+      "tipo2":15.34,
+      "tipo3":14.83,
+      "tipo4":15.92
+   },
+   {
+      "banco":"Banco Santander",
+      "tipo1":-1,
+      "tipo2":-1,
+      "tipo3":-1,
+      "tipo4":12.76
+   },
+   {
+      "banco":"Banco de Bogota",
+      "tipo1":21.67,
+      "tipo2":19.16,
+      "tipo3":18.41,
+      "tipo4":19.36
+   },
+   {
+      "banco":"Banco de Occidente",
+      "tipo1":17.92,
+      "tipo2":16.21,
+      "tipo3":18.57,
+      "tipo4":15.67
+   },
+   {
+      "banco":"Bancolombia",
+      "tipo1":24.15,
+      "tipo2":22.71,
+      "tipo3":18.02,
+      "tipo4":18.55
+   },
+   {
+      "banco":"Bancompartir S.A.",
+      "tipo1":27.54,
+      "tipo2":31,
+      "tipo3":17.99,
+      "tipo4":-1
+   },
+   {
+      "banco":"Bancoomeva",
+      "tipo1":17.15,
+      "tipo2":15.58,
+      "tipo3":15.57,
+      "tipo4":19.58
+   },
+   {
+      "banco":"C.A. Credifinanciera CF",
+      "tipo1":20.56,
+      "tipo2":25.38,
+      "tipo3":24.29,
+      "tipo4":24.36
+   },
+   {
+      "banco":"Citibank",
+      "tipo1":20.25,
+      "tipo2":28.32,
+      "tipo3":24.33,
+      "tipo4":-1
+   },
+   {
+      "banco":"Colpatria Red Multibanca",
+      "tipo1":11.58,
+      "tipo2":24.23,
+      "tipo3":21.91,
+      "tipo4":17.9
+   },
+   {
+      "banco":"Coltefinanciera",
+      "tipo1":-1,
+      "tipo2":25.45,
+      "tipo3":17.6,
+      "tipo4":26.59
+   },
+   {
+      "banco":"Confiar Cooperativa Financiera",
+      "tipo1":17.64,
+      "tipo2":12.7,
+      "tipo3":19.46,
+      "tipo4":15.7
+   },
+   {
+      "banco":"Coofinep Cooperativa Financiera",
+      "tipo1":18.86,
+      "tipo2":19.6,
+      "tipo3":20.34,
+      "tipo4":18.37
+   },
+   {
+      "banco":"Coopcentral",
+      "tipo1":-1,
+      "tipo2":18.49,
+      "tipo3":14.97,
+      "tipo4":-1
+   },
+   {
+      "banco":"Cooperativa Financiera de Antioquia",
+      "tipo1":17.95,
+      "tipo2":18.64,
+      "tipo3":18.58,
+      "tipo4":18.22
+   },
+   {
+      "banco":"Cotrafa Financiera",
+      "tipo1":17.61,
+      "tipo2":18.52,
+      "tipo3":18.84,
+      "tipo4":18.67
+   },
+   {
+      "banco":"Financiera Dann Regional",
+      "tipo1":-1,
+      "tipo2":15,
+      "tipo3":15,
+      "tipo4":15
+   },
+   {
+      "banco":"Financiera Juriscoop C.F.",
+      "tipo1":28.22,
+      "tipo2":20.46,
+      "tipo3":19.34,
+      "tipo4":20.27
+   },
+   {
+      "banco":"Finandina",
+      "tipo1":12.54,
+      "tipo2":18.59,
+      "tipo3":19.61,
+      "tipo4":18.13
+   },
+   {
+      "banco":"Fondo Nacional del Ahorro",
+      "tipo1":11.12,
+      "tipo2":12.55,
+      "tipo3":12.07,
+      "tipo4":12.88
+   },
+   {
+      "banco":"GM FINANCIAL COLOMBIA S.A. COMPAÑÍA DE FINANCIAMIENTO",
+      "tipo1":-1,
+      "tipo2":16.15,
+      "tipo3":16.41,
+      "tipo4":17.88
+   },
+   {
+      "banco":"Giros & Finanzas C.F. ",
+      "tipo1":30.35,
+      "tipo2":31.17,
+      "tipo3":29.44,
+      "tipo4":19.69
+   },
+   {
+      "banco":"ITAÚ",
+      "tipo1":17.83,
+      "tipo2":16.83,
+      "tipo3":16.44,
+      "tipo4":17.33
+   },
+   {
+      "banco":"JFK Cooperativa Financiera",
+      "tipo1":20.04,
+      "tipo2":18.24,
+      "tipo3":19.09,
+      "tipo4":20.03
+   },
+   {
+      "banco":"La Hipotecaria",
+      "tipo1":-1,
+      "tipo2":-1,
+      "tipo3":-1,
+      "tipo4":18.5
+   },
+   {
+      "banco":"Oicolombia",
+      "tipo1":30.33,
+      "tipo2":31.51,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"RCI COLOMBIA S.A.",
+      "tipo1":14.35,
+      "tipo2":15.18,
+      "tipo3":15.49,
+      "tipo4":15.65
+   },
+   {
+      "banco":"Serfinansa",
+      "tipo1":20.04,
+      "tipo2":23.73,
+      "tipo3":20.99,
+      "tipo4":-1
+   }
+]

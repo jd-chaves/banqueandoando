@@ -1,0 +1,38 @@
+[
+   {
+      "banco":"BBVA Colombia",
+      "Entre 1 y 5 días":10,
+      "Entre 6 y 14 días":-1,
+      "Entre 15 y 30 días":8.37
+   },
+   {
+      "banco":"Banco de Bogota",
+      "Entre 1 y 5 días":-1,
+      "Entre 6 y 14 días":-1,
+      "Entre 15 y 30 días":9.89
+   },
+   {
+      "banco":"Banco de Occidente",
+      "Entre 1 y 5 días":-1,
+      "Entre 6 y 14 días":-1,
+      "Entre 15 y 30 días":7.96
+   },
+   {
+      "banco":"Bancolombia",
+      "Entre 1 y 5 días":-1,
+      "Entre 6 y 14 días":-1,
+      "Entre 15 y 30 días":7.9
+   },
+   {
+      "banco":"Colpatria Red Multibanca",
+      "Entre 1 y 5 días":-1,
+      "Entre 6 y 14 días":-1,
+      "Entre 15 y 30 días":6.54
+   },
+   {
+      "banco":"ITAÚ",
+      "Entre 1 y 5 días":11.67,
+      "Entre 6 y 14 días":8.55,
+      "Entre 15 y 30 días":10.11
+   }
+]

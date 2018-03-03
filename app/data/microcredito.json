@@ -1,0 +1,142 @@
+[
+   {
+      "banco":"Av Villas",
+      "tipo1":-1,
+      "tipo2":31.52,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"BANCO CAJA SOCIAL",
+      "tipo1":39.87,
+      "tipo2":33.48,
+      "tipo3":33.66,
+      "tipo4":-1
+   },
+   {
+      "banco":"BANCO W S.A.",
+      "tipo1":43.8,
+      "tipo2":40.96,
+      "tipo3":33.95,
+      "tipo4":51
+   },
+   {
+      "banco":"Banagrario",
+      "tipo1":31.38,
+      "tipo2":26.79,
+      "tipo3":26.37,
+      "tipo4":16.18
+   },
+   {
+      "banco":"Bancamía S.A.",
+      "tipo1":43.18,
+      "tipo2":38.02,
+      "tipo3":35.39,
+      "tipo4":-1
+   },
+   {
+      "banco":"Banco Davivienda",
+      "tipo1":41.85,
+      "tipo2":41.75,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"Banco Mundo Mujer S.A.",
+      "tipo1":44.51,
+      "tipo2":41.01,
+      "tipo3":31.01,
+      "tipo4":-1
+   },
+   {
+      "banco":"Banco de Bogota",
+      "tipo1":51.99,
+      "tipo2":42.3,
+      "tipo3":36.08,
+      "tipo4":35.36
+   },
+   {
+      "banco":"Bancolombia",
+      "tipo1":18.81,
+      "tipo2":26.72,
+      "tipo3":26.1,
+      "tipo4":-1
+   },
+   {
+      "banco":"Bancompartir S.A.",
+      "tipo1":49.9,
+      "tipo2":44.73,
+      "tipo3":30.22,
+      "tipo4":-1
+   },
+   {
+      "banco":"C.A. Credifinanciera CF",
+      "tipo1":44.36,
+      "tipo2":39.3,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"Colpatria Red Multibanca",
+      "tipo1":41.93,
+      "tipo2":39.47,
+      "tipo3":36,
+      "tipo4":-1
+   },
+   {
+      "banco":"Confiar Cooperativa Financiera",
+      "tipo1":24.03,
+      "tipo2":19.07,
+      "tipo3":26,
+      "tipo4":-1
+   },
+   {
+      "banco":"Coofinep Cooperativa Financiera",
+      "tipo1":39.29,
+      "tipo2":39.29,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"Coopcentral",
+      "tipo1":-1,
+      "tipo2":21,
+      "tipo3":19.82,
+      "tipo4":22
+   },
+   {
+      "banco":"Cooperativa Financiera de Antioquia",
+      "tipo1":33.26,
+      "tipo2":33.37,
+      "tipo3":32.56,
+      "tipo4":34.22
+   },
+   {
+      "banco":"Cotrafa Financiera",
+      "tipo1":-1,
+      "tipo2":26.08,
+      "tipo3":26.08,
+      "tipo4":-1
+   },
+   {
+      "banco":"JFK Cooperativa Financiera",
+      "tipo1":-1,
+      "tipo2":22.57,
+      "tipo3":25.32,
+      "tipo4":26.26
+   },
+   {
+      "banco":"Oicolombia",
+      "tipo1":51.45,
+      "tipo2":40.98,
+      "tipo3":23.87,
+      "tipo4":-1
+   },
+   {
+      "banco":"Procredit",
+      "tipo1":-1,
+      "tipo2":-1,
+      "tipo3":22.8,
+      "tipo4":-1
+   }
+]

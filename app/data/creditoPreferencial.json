@@ -1,0 +1,107 @@
+[
+   {
+      "banco":"Av Villas",
+      "tipo1":7.13,
+      "tipo2":8.1,
+      "tipo3":9.9,
+      "tipo4":9.79
+   },
+   {
+      "banco":"BANCO CAJA SOCIAL",
+      "tipo1":7.87,
+      "tipo2":9.59,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"BBVA Colombia",
+      "tipo1":8.11,
+      "tipo2":9.79,
+      "tipo3":9.29,
+      "tipo4":8.89
+   },
+   {
+      "banco":"Banagrario",
+      "tipo1":7.74,
+      "tipo2":10.36,
+      "tipo3":7.37,
+      "tipo4":-1
+   },
+   {
+      "banco":"Banco Davivienda",
+      "tipo1":8.24,
+      "tipo2":9.52,
+      "tipo3":8.8,
+      "tipo4":9.16
+   },
+   {
+      "banco":"Banco GNB Sudameris",
+      "tipo1":7.58,
+      "tipo2":-1,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"Banco Pichincha S.A.",
+      "tipo1":10.73,
+      "tipo2":-1,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"Banco Popular",
+      "tipo1":6.99,
+      "tipo2":8.21,
+      "tipo3":8.31,
+      "tipo4":7.58
+   },
+   {
+      "banco":"Banco de Bogota",
+      "tipo1":7.67,
+      "tipo2":7.99,
+      "tipo3":8.67,
+      "tipo4":7.63
+   },
+   {
+      "banco":"Banco de Occidente",
+      "tipo1":7.81,
+      "tipo2":9.9,
+      "tipo3":-1,
+      "tipo4":12.36
+   },
+   {
+      "banco":"Bancolombia",
+      "tipo1":7.56,
+      "tipo2":8.29,
+      "tipo3":8.03,
+      "tipo4":11.59
+   },
+   {
+      "banco":"Bancoomeva",
+      "tipo1":-1,
+      "tipo2":10.64,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"Citibank",
+      "tipo1":7.22,
+      "tipo2":-1,
+      "tipo3":-1,
+      "tipo4":-1
+   },
+   {
+      "banco":"Colpatria Red Multibanca",
+      "tipo1":7.88,
+      "tipo2":9.43,
+      "tipo3":-1,
+      "tipo4":10
+   },
+   {
+      "banco":"ITAÚ",
+      "tipo1":8.06,
+      "tipo2":9.29,
+      "tipo3":8.95,
+      "tipo4":7.16
+   }
+]
