@@ -18,33 +18,27 @@ class ToolForm extends React.Component{
     this.state = {
       tipo : "",  //Tipo Crédito
       pp : "",    //Periodo en el que se piensa pagar
-      tipoCreditoViv: ""
+      tipoCreditoViv: "",
+      bancos:[]
     };
   }
 
   showInfo = () =>{
-    ReactDOM.render(<div style={{ height: '100vh', width: "90vw",  margin: "0 auto"}}>
-    <br></br>
-    <div className = "row">
-    <div  className = "col-sm-3"><Results /></div>
-    <div  className = "col-sm-3"><Results /></div>
-    <div  className = "col-sm-3"><Results /></div>
-    <div  className = "col-sm-3"><Results /></div>
-    </div>
-    <br></br>
-    <div className = "row">
-    <div  className = "col-sm-3"><Results /></div>
-    <div  className = "col-sm-3"><Results /></div>
-    <div  className = "col-sm-3"><Results /></div>
-    <div  className = "col-sm-3"><Results /></div>
-    </div>
-    <br></br>
-    <div className = "row">
-    <div  className = "col-sm-3"><Results /></div>
-    <div  className = "col-sm-3"><Results /></div>
-    <div  className = "col-sm-3"><Results /></div>
-    <div  className = "col-sm-3"><Results /></div>
-    </div>
+    ReactDOM.render(
+      <div className = "row" style={{ height: '100vh', width: "90vw",  margin: "0 auto"}}>
+      <br></br>
+
+    {
+      this.state.bancos.map(
+        (b) =>
+        b.consumo.tipo1 !== -1 && this.state.tipo === "consumo" && this.state.pp === "tipo1" &&
+        (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo1}/></div>),
+        (b) =>
+        b.consumo.tipo1 !== -1 && this.state.tipo === "consumo" && this.state.pp === "tipo1" &&
+        (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo1}/></div>)
+      )
+    }
+
     <br></br>
     </div>, document.getElementById('resultadosBusqueda'));
     document.getElementById( 'resultadosBusqueda' ).scrollIntoView();
@@ -60,8 +54,17 @@ class ToolForm extends React.Component{
         tipoCreditoViv: this.state.tipoCreditoViv,  //Tipo crédito vivienda
         monto: parseInt(values.monto, 0) //Monto crédito
       }
-      console.log('Received values of form: ', values);
-      this.showInfo();
+      fetch('http://localhost:8080/api/bancos')
+      .then((response) => {
+        if(response.status !== 200){
+          console.log("Error sacando los datos");
+        }
+        return response.json();
+      })
+      .then((json) =>{
+        this.setState({bancos:json});
+        this.showInfo();
+      })
     }
     });
   }
@@ -91,7 +94,7 @@ class ToolForm extends React.Component{
         <Option value="preferencial">Crédito comercial preferencial</Option>
         <Option value="tesoreria">Crédito comercial de tesoreria</Option>
         <Option value="vivienda">Crédito de vivienda</Option>
-        <Option value="microcredito">Microcrédito</Option>
+        <Option value="micro">Microcrédito</Option>
         </Select>
       </FormItem>
       {
@@ -155,12 +158,12 @@ class ToolForm extends React.Component{
                     {getFieldDecorator('monto', {
                       rules: [{ required: true, message: 'Ingrese un monto' }],
                     })(
-                      <InputNumber style={{ width: "33.4vw"}}
+                      <InputNumber style={{ width: "200px"}}
                       formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
                       parser={value => value.replace(/\$\s?|(,*)/g, '')}
                       />
                     )}
-
+                    <br></br>
                     <Button type="primary" htmlType="submit" className="login-form-button" style={{ marginTop: "3vh"}}>
                     Calcular
                     </Button>
@@ -176,12 +179,12 @@ class ToolForm extends React.Component{
                 return(
                   <Card
                   style={{ width: "20vw" }}
-                  cover={<img alt="logo banco" src="http://www.olivia-la.com/wp-content/uploads/2014/11/Banco-Falabella.png" />}
+                  cover={<img alt="logo banco" src={this.props.imgUrl} style={{ height: "22vh", padding:"5px"}} />}
                   actions={[<Icon type="idcard" />, <Icon type="edit" />]}
                   >
                   <Meta
-                  title="Card title"
-                  description="This is the description"
+                  title={this.props.bankName}
+                  description={this.props.interes}
                   />
                   </Card>
                 );

@@ -53,6 +53,7 @@ module.exports = function(express) {
     });
     res.json({ success: true, message: "Usuarios agregados" });
   });
+
   apiRouter.get("/mejoresBancos", function(req, res) {
     var elementos = req.body;
     Banco.find(function(err, bancos) {
@@ -63,6 +64,15 @@ module.exports = function(express) {
       res.json(bancos);
     })
   });
+
+  apiRouter.get("/bancos", function(req, res) {
+    var elementos = req.body;
+    Banco.find(function(err, bancos) {
+      if (err) return res.send(err);
+      res.json(bancos);
+    })
+  });
+
   //lOG IN EN LA APLICACIÓN -----------------------------------------------------------------------------------------------------------
   apiRouter.post("/authenticate", function(req, res) {
 
