@@ -19,6 +19,7 @@ body {
 	overflow-x: hidden;
 	position: relative;
 	font-family: 'Roboto', sans-serif;
+	scroll-behavior: smooth;
 }
 
 hr {
