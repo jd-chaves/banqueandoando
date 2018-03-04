@@ -1,4 +1,5 @@
 import React from 'react';
+import $ from 'jquery';
 import ReactDOM from 'react-dom';
 import Results from './Results';
 import { Form, Select, Button, InputNumber, Popover } from 'antd';
@@ -29,202 +30,208 @@ class ToolForm extends React.Component{
       <br></br>
 
       {(this.state.tipo === "consumo" && this.state.pp === "tipo1") &&
-        this.state.bancos.map(
-          (b) =>
-          b.consumo.tipo1 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo1}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        b.consumo.tipo1 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo1}/></div>)
       )}
 
       {(this.state.tipo === "consumo" && this.state.pp === "tipo2") &&
-        this.state.bancos.map(
-          (b) =>
-          b.consumo.tipo2 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo2}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        b.consumo.tipo2 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo2}/></div>)
       )}
 
       {(this.state.tipo === "consumo" && this.state.pp === "tipo3") &&
-        this.state.bancos.map(
-          (b) =>
-          b.consumo.tipo3 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo3}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        b.consumo.tipo3 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo3}/></div>)
       )}
 
       {(this.state.tipo === "consumo" && this.state.pp === "tipo4") &&
-        this.state.bancos.map(
-          (b) =>
-          b.consumo.tipo4 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo4}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        b.consumo.tipo4 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo4}/></div>)
       )}
 
       {(this.state.tipo === "preferencial" && this.state.pp === "tipo1") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.preferencial !== 'undefined' && b.preferencial.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo1}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo1}/></div>)
       )}
 
       {(this.state.tipo === "preferencial" && this.state.pp === "tipo2") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.preferencial !== 'undefined' && b.preferencial.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo2}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo2}/></div>)
       )}
 
       {(this.state.tipo === "preferencial" && this.state.pp === "tipo3") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.preferencial !== 'undefined' && b.preferencial.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo3}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo3}/></div>)
       )}
 
       {(this.state.tipo === "preferencial" && this.state.pp === "tipo4") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.preferencial !== 'undefined' && b.preferencial.tipo4 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo4}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo4 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo4}/></div>)
       )}
 
       {(this.state.tipo === "micro" && this.state.pp === "tipo1") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.micro !== 'undefined' && b.micro.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo1}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.micro !== 'undefined' && b.micro.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo1}/></div>)
       )}
 
       {(this.state.tipo === "micro" && this.state.pp === "tipo2") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.micro !== 'undefined' && b.micro.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo2}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.micro !== 'undefined' && b.micro.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo2}/></div>)
       )}
 
       {(this.state.tipo === "micro" && this.state.pp === "tipo3") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.micro !== 'undefined' && b.micro.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo3}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.micro !== 'undefined' && b.micro.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo3}/></div>)
       )}
 
       {(this.state.tipo === "micro" && this.state.pp === "tipo4") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.micro !== 'undefined' && b.micro.tipo4 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo4}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.micro !== 'undefined' && b.micro.tipo4 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo4}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo1") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.ordinario !== 'undefined' && b.ordinario.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo1}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo1}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo2") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.ordinario !== 'undefined' && b.ordinario.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo2}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo2}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo3") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.ordinario !== 'undefined' && b.ordinario.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo3}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo3}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo4") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.ordinario !== 'undefined' && b.ordinario.tipo4 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo4}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo4 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo4}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo5") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.ordinario !== 'undefined' && b.ordinario.tipo5 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo5}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo5 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo5}/></div>)
       )}
 
       {(this.state.tipo === "tesoreria" && this.state.pp === "tipo1") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.tesoreria.tipo1}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.tesoreria.tipo1}/></div>)
       )}
 
       {(this.state.tipo === "tesoreria" && this.state.pp === "tipo2") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.tesoreria.tipo2}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.tesoreria.tipo2}/></div>)
       )}
 
       {(this.state.tipo === "tesoreria" && this.state.pp === "tipo3") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.tesoreria.tipo3}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.tesoreria.tipo3}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo1") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.vivienda !== 'undefined' && b.vivienda.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo1}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo1}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo2") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.vivienda !== 'undefined' && b.vivienda.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo2}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo2 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo2}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo3") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.vivienda !== 'undefined' && b.vivienda.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo3}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo3 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo3}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo4") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.vivienda !== 'undefined' && b.vivienda.tipo4 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo4}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo4 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo4}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo5") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.vivienda !== 'undefined' && b.vivienda.tipo5 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo5}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo5 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo5}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo6") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.vivienda !== 'undefined' && b.vivienda.tipo6 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo6}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo6 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo6}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo7") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.vivienda !== 'undefined' && b.vivienda.tipo7 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo7}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo7 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo7}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo8") &&
-        this.state.bancos.map(
-          (b) =>
-          (typeof b.vivienda !== 'undefined' && b.vivienda.tipo8 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo8}/></div>)
+      this.state.bancos.map(
+        (b) =>
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo8 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo8}/></div>)
       )}
-
-    <br></br>
-    </div>, document.getElementById('resultadosBusqueda'));
-    document.getElementById( 'resultadosBusqueda' ).scrollIntoView();
+      <br></br>
+      </div>, document.getElementById('resultadosBusqueda'),
+      function(){
+        $(document).ready(function(){
+          $('html, body').animate({
+          scrollTop: $("#resultadosBusqueda").offset().top
+      }, 1000);
+      })
+      }
+    );
   }
 
   handleSubmit = (e) => {
     e.preventDefault();
     this.props.form.validateFields((err, values) => {
       if(!err){
-      values = {
-        tipo : this.state.tipo,  //Tipo Crédito
-        pp : this.state.pp, //Periodo en el que se piensa pagar
-        tipoCreditoViv: this.state.tipoCreditoViv,  //Tipo crédito vivienda
-        monto: parseInt(values.monto, 0) //Monto crédito
-      }
-      fetch('http://localhost:8080/api/bancos')
-      .then((response) => {
-        if(response.status !== 200){
-          console.log("Error sacando los datos");
+        values = {
+          tipo : this.state.tipo,  //Tipo Crédito
+          pp : this.state.pp, //Periodo en el que se piensa pagar
+          tipoCreditoViv: this.state.tipoCreditoViv,  //Tipo crédito vivienda
+          monto: parseInt(values.monto, 0) //Monto crédito
         }
-        return response.json();
-      })
-      .then((json) =>{
-        console.log(this.state.pp);
-        console.log(this.state.tipo);
-        this.setState({bancos:json});
-        this.showInfo();
-      })
-    }
+        fetch('http://localhost:8080/api/bancos')
+        .then((response) => {
+          if(response.status !== 200){
+            console.log("Error sacando los datos");
+          }
+          return response.json();
+        })
+        .then((json) =>{
+          console.log(this.state.pp);
+          console.log(this.state.tipo);
+          this.setState({bancos:json});
+          this.showInfo();
+        })
+      }
     });
   }
 
@@ -247,46 +254,46 @@ class ToolForm extends React.Component{
     return(
       <Form onSubmit={this.handleSubmit} style={{height: "200px", width: "35%",  margin: "0 auto"}}>
       <FormItem>
-        <Select placeholder="Tipo de crédito" onChange={this.handleCreditChange} >
-        <Option value="consumo">Crédito de consumo</Option>
-        <Option value="vivienda">Crédito comercial vivienda</Option>
-        <Option value="preferencial">Crédito comercial preferencial</Option>
-        <Option value="tesoreria">Crédito comercial de tesoreria</Option>
-        <Option value="ordinario">Crédito comercial ordinario</Option>
-        <Option value="micro">Microcrédito</Option>
-        </Select>
+      <Select placeholder="Tipo de crédito" onChange={this.handleCreditChange} >
+      <Option value="consumo">Crédito de consumo</Option>
+      <Option value="vivienda">Crédito vivienda</Option>
+      <Option value="preferencial">Crédito comercial preferencial</Option>
+      <Option value="tesoreria">Crédito comercial de tesoreria</Option>
+      <Option value="ordinario">Crédito comercial ordinario</Option>
+      <Option value="micro">Microcrédito</Option>
+      </Select>
       </FormItem>
       {
         (this.state.tipo === "consumo" || this.state.tipo === "preferencial" || this.state.tipo === "micro") && (
           <FormItem>
-            <Select placeholder="Temporalidad" onChange={this.handleTempChange} >
-            <Option value="tipo1">Entre 31 y 365 días</Option>
-            <Option value="tipo2">Entre 366 y 1095 días</Option>
-            <Option value="tipo3">Entre 1096 y 1825 días</Option>
-            <Option value="tipo4">A más de 1825 días</Option>
-            </Select>
+          <Select placeholder="Temporalidad" onChange={this.handleTempChange} >
+          <Option value="tipo1">Entre 31 y 365 días</Option>
+          <Option value="tipo2">Entre 366 y 1095 días</Option>
+          <Option value="tipo3">Entre 1096 y 1825 días</Option>
+          <Option value="tipo4">A más de 1825 días</Option>
+          </Select>
           </FormItem>)
         } {
-            (this.state.tipo === "ordinario") && (
+          (this.state.tipo === "ordinario") && (
+            <FormItem>
+            <Select placeholder="Temporalidad" onChange={this.handleTempChange} >
+            <Option value="tipo1">Entre 1 y 30 días</Option>
+            <Option value="tipo2">Entre 31 y 365 días</Option>
+            <Option value="tipo3">Entre 366 y 1095 días</Option>
+            <Option value="tipo4">Entre 1096 y 1825 días</Option>
+            <Option value="tipo5">A más de 1825 días</Option>
+            </Select>
+            </FormItem>)
+          } {
+            (this.state.tipo === "tesoreria") && (
               <FormItem>
-                <Select placeholder="Temporalidad" onChange={this.handleTempChange} >
-                <Option value="tipo1">Entre 1 y 30 días</Option>
-                <Option value="tipo2">Entre 31 y 365 días</Option>
-                <Option value="tipo3">Entre 366 y 1095 días</Option>
-                <Option value="tipo4">Entre 1096 y 1825 días</Option>
-                <Option value="tipo5">A más de 1825 días</Option>
-                </Select>
+              <Select placeholder="Temporalidad" onChange={this.handleTempChange} >
+              <Option value="tipo1">Entre 1 y 5 días</Option>
+              <Option value="tipo2">Entre 6 y 14 días</Option>
+              <Option value="tipo3">Entre 15 y 30 días</Option>
+              </Select>
               </FormItem>)
-            } {
-                (this.state.tipo === "tesoreria") && (
-                  <FormItem>
-                    <Select placeholder="Temporalidad" onChange={this.handleTempChange} >
-                    <Option value="tipo1">Entre 1 y 5 días</Option>
-                    <Option value="tipo2">Entre 6 y 14 días</Option>
-                    <Option value="tipo3">Entre 15 y 30 días</Option>
-                    </Select>
-                  </FormItem>)
-                }{
+            }{
               (this.state.tipo === "vivienda") && (
                 <FormItem>
                 <Popover content={cont} trigger="hover" placement="bottomLeft" title="*">
