@@ -203,7 +203,7 @@ module.exports = function(express) {
   apiRouter.get("/referencias/:nom_banco",function(req,res){
     Referencia.find({banco:req.params.nom_banco},function(err, data){
       if(err) return res.send(err);
-      return res.json({success:true, Referencias:data});
+      return res.json({success:true, referencias:data});
     })
   });
   // Ver referencias de un cliente------------------------------------------------------------------------------------------------------------------------------------------------------
