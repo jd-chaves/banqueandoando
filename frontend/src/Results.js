@@ -24,8 +24,8 @@ class Results extends React.Component {
               title={this.props.bankName}
               description={[<Icon type="calculator" style={{ marginRight: "4px"}}/>, this.props.interes, <Rate disabled defaultValue={this.props.rate} style={{ float: "right", marginTop:"-5px", paddingRight:"-40px" }}/>]}            />
             </Card>
-            <ModalReferencias banco ={this.props.bankName} id ={this.idSin} />
-            <ModalNuevaReferencia banco ={this.props.bankName} id ={this.idSinr} />
+            <ModalReferencias banco ={this.props.bankName} id ={this.idSin} usuario = {this.props.usuario} nombre = {this.props.nombre} />
+            <ModalNuevaReferencia banco ={this.props.bankName} id ={this.idSinr} usuario = {this.props.usuario} nombre = {this.props.nombre} />
 
           </div>
         );

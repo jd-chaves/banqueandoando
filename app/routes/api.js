@@ -110,9 +110,7 @@ module.exports = function(express) {
             _id: user.id,
             nombre: user.nombre,
             usuario: user.usuario,
-          }, superSecret, {
-            expiresIn: "24h" // expires in 24 hours
-          });
+          }, superSecret);
           // return the information including token as JSON
           return res.json({
             success: true,
@@ -127,6 +125,22 @@ module.exports = function(express) {
   });
 
 
+  apiRouter.post('/me', function(req, res) {
+    Usuario.findOne({usuario:req.body.usuario}, function (err, usr){
+      console.log(req.body.usuario);
+      if(!err){
+        if(usr){
+          return res.json({success:true, usuario:usr});
+        }
+        else {
+          return res.json({success:false});
+        }
+      }
+      else
+      return res.send(err);
+
+    })
+  });
 
   // Obtener bancos mejores puntuados--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
   apiRouter.get("/mejoresBancos", function(req, res) {
@@ -153,6 +167,7 @@ module.exports = function(express) {
   // Insertar una referencia--------------------------------------------------------------------------------------------------------------------------------------------------------------------------
 
   apiRouter.post("/insertarReferencia",function(req,res){
+    console.log(req.body);
     Referencia.findOne({banco:req.body.banco,usuario:req.body.usuario},function(err, ref){
       if(err) return res.send(err);
       if(!ref){

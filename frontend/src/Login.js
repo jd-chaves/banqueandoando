@@ -34,12 +34,31 @@ class NormalLoginForm extends React.Component {
       body: JSON.stringify(data)
     }).then((response) => response.json())
     .then((responseJson) => {
-      if(!responseJson.success){
-        this.setState({mU:responseJson.message});
-      }
-      else{
-        localStorage.setItem('banqToken', responseJson.token);
-        this.setState({mU:''});
+      if(!responseJson.success)
+      this.setState({mU:responseJson.message});
+      else
+      {
+        fetch('http://localhost:8080/api/me', {
+          method: 'POST',
+          headers: {
+            'Accept': 'application/json',
+            'Content-Type': 'application/json',
+          },
+          body: JSON.stringify(data)
+        }).then((response2) => response2.json())
+        .then((responseJson2) => {
+          if(responseJson2.success){
+            this.setState({mU:''});
+            this.props.setToken(responseJson.token, responseJson2.usuario);
+          }
+          else {
+            console.log(responseJson2);
+          }
+        })
+        .catch((error) => {
+          console.error(error);
+        });
+
       }
     })
     .catch((error) => {
@@ -67,6 +86,9 @@ class NormalLoginForm extends React.Component {
     .catch((error) => {
       console.error(error);
     });
+
+
+
   }
   rerender = () =>{
     if(this.state.account){
@@ -94,6 +116,7 @@ class NormalLoginForm extends React.Component {
   }
 
   render() {
+    if(!this.props.usuario)
     if(this.state.account){
       const { getFieldDecorator } = this.props.form;
       return (
@@ -179,6 +202,9 @@ class NormalLoginForm extends React.Component {
         </Form>
       );
     }
+    else return(
+      <div> Bienvenido {this.props.nombre}</div>
+    )
   }
 }
 
