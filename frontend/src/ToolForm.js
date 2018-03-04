@@ -20,7 +20,8 @@ class ToolForm extends React.Component{
       tipo : "",  //Tipo Crédito
       pp : "",    //Periodo en el que se piensa pagar
       tipoCreditoViv: "",
-      bancos:[]
+      bancos:[],
+      monto:0
     };
   }
 
@@ -32,169 +33,169 @@ class ToolForm extends React.Component{
       {(this.state.tipo === "consumo" && this.state.pp === "tipo1") &&
       this.state.bancos.map(
         (b) =>
-        b.consumo.tipo1 !== -1 && (<div  key ={b._id} style={{ padding:"5px"}} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo1} rate = {b.puntos}/></div>)
+        b.consumo.tipo1 !== -1 && (<div  key ={b._id} style={{ padding:"5px"}} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.consumo.tipo1/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "consumo" && this.state.pp === "tipo2") &&
       this.state.bancos.map(
         (b) =>
-        b.consumo.tipo2 !== -1 && (<div  key ={b._id} style={{ padding:"5px"}} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo2} rate = {b.puntos}/></div>)
+        b.consumo.tipo2 !== -1 && (<div  key ={b._id} style={{ padding:"5px"}} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.consumo.tipo2/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "consumo" && this.state.pp === "tipo3") &&
       this.state.bancos.map(
         (b) =>
-        b.consumo.tipo3 !== -1 && (<div  key ={b._id} style={{ padding:"5px"}} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo3} rate = {b.puntos} /></div>)
+        b.consumo.tipo3 !== -1 && (<div  key ={b._id} style={{ padding:"5px"}} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.consumo.tipo3/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos} /></div>)
       )}
 
       {(this.state.tipo === "consumo" && this.state.pp === "tipo4") &&
       this.state.bancos.map(
         (b) =>
-        b.consumo.tipo4 !== -1 && (<div  key ={b._id} style={{ padding:"5px"}} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo4} rate = {b.puntos}/></div>)
+        b.consumo.tipo4 !== -1 && (<div  key ={b._id} style={{ padding:"5px"}} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.consumo.tipo4/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "preferencial" && this.state.pp === "tipo1") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo1 !== -1) && (<div  style={{ padding:"5px"}} key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo1} rate = {b.puntos}/></div>)
+        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo1 !== -1) && (<div  style={{ padding:"5px"}} key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.preferencial.tipo1/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "preferencial" && this.state.pp === "tipo2") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo2 !== -1) && (<div style={{ padding:"5px"}} key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo2} rate = {b.puntos}/></div>)
+        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo2 !== -1) && (<div style={{ padding:"5px"}} key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.preferencial.tipo2/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "preferencial" && this.state.pp === "tipo3") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo3} rate = {b.puntos}/></div>)
+        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.preferencial.tipo3/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "preferencial" && this.state.pp === "tipo4") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo4 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo4} rate = {b.puntos}/></div>)
+        (typeof b.preferencial !== 'undefined' && b.preferencial.tipo4 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.preferencial.tipo4/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "micro" && this.state.pp === "tipo1") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.micro !== 'undefined' && b.micro.tipo1 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo1} rate = {b.puntos}/></div>)
+        (typeof b.micro !== 'undefined' && b.micro.tipo1 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.micro.tipo1/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "micro" && this.state.pp === "tipo2") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.micro !== 'undefined' && b.micro.tipo2 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo2} rate = {b.puntos}/></div>)
+        (typeof b.micro !== 'undefined' && b.micro.tipo2 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.micro.tipo2/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "micro" && this.state.pp === "tipo3") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.micro !== 'undefined' && b.micro.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo3} rate = {b.puntos}/></div>)
+        (typeof b.micro !== 'undefined' && b.micro.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.micro.tipo3/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "micro" && this.state.pp === "tipo4") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.micro !== 'undefined' && b.micro.tipo4 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.micro.tipo4} rate = {b.puntos}/></div>)
+        (typeof b.micro !== 'undefined' && b.micro.tipo4 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.micro.tipo4/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo1") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo1 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo1} rate = {b.puntos}/></div>)
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo1 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.ordinario.tipo1/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo2") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo2 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo2} rate = {b.puntos}/></div>)
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo2 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.ordinario.tipo2/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo3") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo3} rate = {b.puntos}/></div>)
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.ordinario.tipo3/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo4") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo4 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo4} rate = {b.puntos}/></div>)
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo4 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.ordinario.tipo4/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "ordinario" && this.state.pp === "tipo5") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo5 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.ordinario.tipo5} rate = {b.puntos}/></div>)
+        (typeof b.ordinario !== 'undefined' && b.ordinario.tipo5 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.ordinario.tipo5/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "tesoreria" && this.state.pp === "tipo1") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo1 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.tesoreria.tipo1} rate = {b.puntos}/></div>)
+        (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo1 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.tesoreria.tipo1/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "tesoreria" && this.state.pp === "tipo2") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo2 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.tesoreria.tipo2} rate = {b.puntos}/></div>)
+        (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo2 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.tesoreria.tipo2/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "tesoreria" && this.state.pp === "tipo3") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.tesoreria.tipo3} rate = {b.puntos}/></div>)
+        (typeof b.tesoreria !== 'undefined' && b.tesoreria.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.tesoreria.tipo3/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo1") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo1 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo1} rate = {b.puntos}/></div>)
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo1 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.vivienda.tipo1/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo2") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo2 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo2} rate = {b.puntos}/></div>)
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo2 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.vivienda.tipo2/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo3") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo3} rate = {b.puntos}/></div>)
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo3 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.vivienda.tipo3/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo4") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo4 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo4} rate = {b.puntos}/></div>)
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo4 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.vivienda.tipo4/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo5") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo5 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo5} rate = {b.puntos}/></div>)
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo5 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.vivienda.tipo5/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo6") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo6 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo6} rate = {b.puntos}/></div>)
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo6 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.vivienda.tipo6/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo7") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo7 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo7} rate = {b.puntos}/></div>)
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo7 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.vivienda.tipo7/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
 
       {(this.state.tipo === "vivienda" && this.state.tipoCreditoViv === "tipo8") &&
       this.state.bancos.map(
         (b) =>
-        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo8 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.vivienda.tipo8} rate = {b.puntos}/></div>)
+        (typeof b.vivienda !== 'undefined' && b.vivienda.tipo8 !== -1) && (<div style={{ padding:"5px"}}  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={parseFloat(((b.vivienda.tipo8/100)+1)*this.state.monto).toFixed(2)} rate = {b.puntos}/></div>)
       )}
       <br></br>
       <br></br>
@@ -228,8 +229,7 @@ class ToolForm extends React.Component{
           return response.json();
         })
         .then((json) =>{
-          console.log(this.state.pp);
-          console.log(this.state.tipo);
+          this.setState({monto:values.monto});
           this.setState({bancos:json});
           this.showInfo();
         })
@@ -314,6 +314,16 @@ class ToolForm extends React.Component{
               } {
                 (this.state.tipo === "vivienda" && this.state.tipoCreditoViv !== "") && (
                   <FormItem>
+
+                  {getFieldDecorator('monto', {
+                    rules: [{ required: true, message: 'Ingrese un monto' }],
+                  })(
+                    <InputNumber style={{ width: "200px"}}
+                    formatter={value => `$ ${value}`.replace(/\B(?=(\d{3})+(?!\d))/g, ',')}
+                    parser={value => value.replace(/\$\s?|(,*)/g, '')}
+                    />
+                  )}
+                  <br></br>
                   <Button type="primary" htmlType="submit" className="login-form-button">
                   Calcular
                   </Button>
