@@ -40,7 +40,7 @@ module.exports = function(express) {
       }
 
     });
-    res.json({ success: true, message: "Usuario agregados" });
+    return res.json({ success: true, message: "Usuario agregado" });
 
   });
   apiRouter.post("/usuarios",function (req, res){
@@ -114,7 +114,7 @@ module.exports = function(express) {
             expiresIn: "24h" // expires in 24 hours
           });
           // return the information including token as JSON
-          res.json({
+          return res.json({
             success: true,
             message: "Enjoy your token!",
             token: token
