@@ -38,7 +38,7 @@ Puede descargar este proyecto y desplegarlo de forma local siguiendo las éstas 
 
 * Dirijase nuevamente al directorio /frontend y ejecute el comando
   ```
-  > yanr built
+  > yarn build
   ```  
 * Finalmente, regrese al directorio raíz de la aplicación y ejecute el comando 
    ```
