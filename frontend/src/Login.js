@@ -25,7 +25,7 @@ class NormalLoginForm extends React.Component {
   }
 
   doSignIn = (data) => {
-    fetch('http://localhost:8080/api/authenticate', {
+    fetch('https://banqueando.herokuapp.com/api/authenticate', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',
@@ -38,7 +38,7 @@ class NormalLoginForm extends React.Component {
       this.setState({mU:responseJson.message});
       else
       {
-        fetch('http://localhost:8080/api/me', {
+        fetch('https://banqueando.herokuapp.com/api/me', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
@@ -66,7 +66,7 @@ class NormalLoginForm extends React.Component {
     });
   }
   doSignUp = (data) => {
-    return fetch('http://localhost:8080/api/usuario', {
+    return fetch('https://banqueando.herokuapp.com/api/usuario', {
       method: 'POST',
       headers: {
         'Accept': 'application/json',

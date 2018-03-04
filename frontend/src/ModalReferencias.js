@@ -10,7 +10,7 @@ class ModalReferencias extends Component {
   }
   componentDidMount ()
   {
-    fetch('http://localhost:8080/api/referencias/'+ this.props.banco)
+    fetch('https://banqueando.herokuapp.com/api/referencias/'+ this.props.banco)
     .then((response) => response.json())
     .then((responseJson) => {
       if(responseJson.success){
