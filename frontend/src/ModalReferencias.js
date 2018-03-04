@@ -14,8 +14,6 @@ componentDidMount ()
   .then((response) => response.json())
   .then((responseJson) => {
     if(responseJson.success){
-      console.log(this.props.banco);
-      console.log(responseJson.referencias);
       this.setState({referencias:responseJson.referencias});
     }
     else{
@@ -32,7 +30,7 @@ return (<Comentario nombre = {ref.nombre} texto = {ref.texto} puntos = {ref.punt
   render() {
     return (
       <div className="container">
-        <div className="modal fade" id="myModal" role="dialog">
+        <div className="modal fade" id={this.props.id} role="dialog">
           <div className="modal-dialog">
             <div className="modal-content">
               <div className="modal-header">
