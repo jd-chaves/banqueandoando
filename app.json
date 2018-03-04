@@ -1,0 +1,7 @@
+{
+  "env": {    
+    "MONGOLAB_URI": {
+      "value": "mongodb://moncho:moncho@ds155268.mlab.com:55268/proyecto2web"
+    }
+  }
+}
