@@ -19,7 +19,7 @@ Esta apliación fue desarrollada con el fin de brindar a los consumidores de pro
 - Bootstrap
 - JavaScript
 
-## Prerequisitos
+## Prerrequisitos
 * Instalar NodeJs
 
 ## Despliegue
