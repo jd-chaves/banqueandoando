@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
-import { Form, Select, Icon, Button, Card, InputNumber, Popover } from 'antd';
-const { Meta } = Card;
+import Results from './Results';
+import { Form, Select, Button, InputNumber, Popover } from 'antd';
 const FormItem = Form.Item;
 const Option = Select.Option;
 const cont = (
@@ -332,21 +332,5 @@ class ToolForm extends React.Component{
               }
             }
 
-            class Results extends React.Component {
-              render(){
-                return(
-                  <Card
-                  style={{ width: "20vw" }}
-                  cover={<img alt="logo banco" src={this.props.imgUrl} style={{ height: "22vh", padding:"5px"}} />}
-                  actions={[<Icon type="idcard" />, <Icon type="edit" />]}
-                  >
-                  <Meta
-                  title={this.props.bankName}
-                  description={this.props.interes}
-                  />
-                  </Card>
-                );
-              }
-            }
             const WrappedNormalToolForm = Form.create()(ToolForm);
             export default WrappedNormalToolForm;
