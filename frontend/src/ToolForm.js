@@ -228,7 +228,7 @@ class ToolForm extends React.Component{
           tipoCreditoViv: this.state.tipoCreditoViv,  //Tipo crédito vivienda
           monto: parseInt(values.monto, 0) //Monto crédito
         }
-        fetch("http://localhost:8080/api/"+ruta)
+        fetch("https://banqueando.herokuapp.com/api/"+ruta)
         .then((response) => {
           if(response.status !== 200){
             console.log("Error sacando los datos");
