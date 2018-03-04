@@ -24,7 +24,7 @@ class NuevaReferencia extends Component {
         values.usuario = this.props.usuario;
         values.banco = this.props.banco;
         values.nombre = this.props.nombre;
-        return fetch('https://banqueando.herokuapp.com/insertarReferencia', {
+        return fetch('https://banqueando.herokuapp.com/api/insertarReferencia', {
           method: 'POST',
           headers: {
             'Accept': 'application/json',
