@@ -8,9 +8,6 @@ var morgan     = require('morgan'); 		// used to see requests
 var mongoose   = require('mongoose');
 var config 	   = require('./config');
 
-var index = require('./app/routes/index');
-var users = require('./app/routes/users');
-
 var app = express();
 
 
@@ -50,8 +47,6 @@ app.use('/api', apiRoutes);
 
 
 
-app.use('/', index);
-app.use('/users', users);
 
 // catch 404 and forward to error handler
 app.use(function(req, res, next) {

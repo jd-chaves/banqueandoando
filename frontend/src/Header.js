@@ -51,8 +51,7 @@ class Header extends React.Component {
               <div className="item">
                 <h2 className="nino-sectionHeading" style={{fontSize: '2vw !important', lineHeight: '1.4 !important'}}>
                   <span className="nino-subHeading">¿Qué es Banqueando?</span>
-                  Lorem ipsum dolor sit amet, consectetur adipiscing elit, <br /> sed do eiusmod tempor incididunt ut labore <br /> et dolore magna aliqua. Ut enim ad minim veniam, <br /> quis nostrud exercitation ullamco laboris nisi.
-                </h2>
+                  Banqueando permite a los consumidores financieros ver de forma muy clara y transparente la manera en que van a pagar un producto financiero (particularmente créditos) al que tienen la intención de acceder.                </h2>
                 <a href="" className="nino-btn">Empezar</a>
               </div>
               <div className="item">

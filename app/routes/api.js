@@ -40,7 +40,7 @@ module.exports = function(express) {
       }
 
     });
-    res.json({ success: true, message: "Usuario agregados" });
+    return res.json({ success: true, message: "Usuario agregado" });
 
   });
   apiRouter.post("/usuarios",function (req, res){
@@ -114,7 +114,7 @@ module.exports = function(express) {
             expiresIn: "24h" // expires in 24 hours
           });
           // return the information including token as JSON
-          res.json({
+          return res.json({
             success: true,
             message: "Enjoy your token!",
             token: token
@@ -200,10 +200,10 @@ module.exports = function(express) {
     })
   });
   // Ver referencias de un banco------------------------------------------------------------------------------------------------------------------------------------------------------
-  apiRouter.get("/referencias/:nom_banco",function(req,res){
-    Referencia.find({banco:req.params.nom_banco},function(err, data){
+  apiRouter.get("/referencias/:nom_b",function(req,res){
+    Referencia.find({banco:req.params.nom_b},function(err, data){
       if(err) return res.send(err);
-      return res.json({success:true, Referencias:data});
+      return res.json({success:true, referencias:data});
     })
   });
   // Ver referencias de un cliente------------------------------------------------------------------------------------------------------------------------------------------------------

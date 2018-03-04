@@ -23,6 +23,29 @@ class NormalLoginForm extends React.Component {
       }
     });
   }
+
+  doSignIn = (data) => {
+    fetch('http://localhost:8080/api/authenticate', {
+      method: 'POST',
+      headers: {
+        'Accept': 'application/json',
+        'Content-Type': 'application/json',
+      },
+      body: JSON.stringify(data)
+    }).then((response) => response.json())
+    .then((responseJson) => {
+      if(!responseJson.success){
+        this.setState({mU:responseJson.message});
+      }
+      else{
+        localStorage.setItem('banqToken', responseJson.token);
+        this.setState({mU:''});
+      }
+    })
+    .catch((error) => {
+      console.error(error);
+    });
+  }
   doSignUp = (data) => {
     return fetch('http://localhost:8080/api/usuario', {
       method: 'POST',
@@ -37,30 +60,9 @@ class NormalLoginForm extends React.Component {
       this.setState({mU:responseJson.message});
       else
       {
-      this.setState({mU:''});
-      this.doSignIn(data);
-    }
-      return console.log(responseJson);
-    })
-    .catch((error) => {
-      console.error(error);
-    });
-  }
-  doSignIn = (data) => {
-    fetch('http://localhost:8080/api/usuario', {
-      method: 'POST',
-      headers: {
-        'Accept': 'application/json',
-        'Content-Type': 'application/json',
-      },
-      body: JSON.stringify(data)
-    }).then((response) => response.json())
-    .then((responseJson) => {
-      console.log(responseJson.message);
-      if(!responseJson.success)
-      this.setState({mU:responseJson.message});
-      else
         this.setState({mU:''});
+        this.doSignIn(data);
+      }
     })
     .catch((error) => {
       console.error(error);
@@ -95,12 +97,12 @@ class NormalLoginForm extends React.Component {
     if(this.state.account){
       const { getFieldDecorator } = this.props.form;
       return (
-        <Form onSubmit={this.handleSubmit} className="login-form" style={{height: "200px", width: "30%",  margin: "0 auto"}}>
+        <Form onSubmit={this.handleSubmit} className=" in-form" style={{height: "200px", width: "30%",  margin: "0 auto"}}>
           <FormItem style={{  marginBottom: "5px" }}>
             {getFieldDecorator('usuario', {
-              rules: [{ required: true, message: 'Ingrese su email!' }],
+              rules: [{ required: true, message: 'Ingrese su nombre de usuario' }],
             })(
-              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Email" />
+              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Nombre de usuario" />
             )}
           </FormItem>
 
@@ -128,13 +130,11 @@ class NormalLoginForm extends React.Component {
         <Form onSubmit={this.handleSubmit} style={{height: "200px", width: "30%",  margin: "0 auto"}}>
           <FormItem style={{  marginBottom: "5px" }}>
             {getFieldDecorator('usuario', {
-              rules: [{
-                type: 'email', message: 'Correo invalido',
-              }, {
-                required: true, message: 'Ingrese su e-mail!',
+              rules: [ {
+                required: true, message: 'Ingrese su nombre de usuario',
               }],
             })(
-              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Email" />
+              <Input prefix={<Icon type="user" style={{ color: 'rgba(0,0,0,.25)' }} />} placeholder="Nombre de usuario" />
             )}
           </FormItem>
 
