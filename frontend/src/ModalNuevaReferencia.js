@@ -25,9 +25,9 @@ class ModalNuevaReferencia extends Component {
               </div>
               <div className="modal-body">
 
-                <div className="container">
-                  <Form onSubmit={this.handleSubmit} className=" in-form" style={{height: "200px", width: "80%",  margin: "0 0"}}>
-                    <textarea rows={4} />
+                <div className="container" style = {{width: "100%"}}>
+                  <Form onSubmit={this.handleSubmit} className=" in-form" style={{height: "200px", width: "80%",  margin: "0 auto"}}>
+                    <textarea rows={4} style={{width :"100%", resize: "none"}} />
 
                     <FormItem style={{  marginBottom: "5px" }}>
                       <Rate />
