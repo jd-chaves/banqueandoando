@@ -50,7 +50,7 @@ Encontrará la aplicación desplegada si en su browser se dirige a http://localh
 ## Licencia
 Estándar [MIT license](https://github.com/sneiderV/restaurantsDis/blob/master/LICENSE)  
 
-### Autores
+## Autores
 * **Andrés Olivares** - [*Personal website*](https://af-olivares10.github.io/)
 * **Ramón Vega** - [*Personal website*](https://ramonvega96.github.io/)
 
