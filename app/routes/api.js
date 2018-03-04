@@ -200,8 +200,8 @@ module.exports = function(express) {
     })
   });
   // Ver referencias de un banco------------------------------------------------------------------------------------------------------------------------------------------------------
-  apiRouter.get("/referencias/:nom_banco",function(req,res){
-    Referencia.find({banco:req.params.nom_banco},function(err, data){
+  apiRouter.get("/referencias/:nom_b",function(req,res){
+    Referencia.find({banco:req.params.nom_b},function(err, data){
       if(err) return res.send(err);
       return res.json({success:true, referencias:data});
     })

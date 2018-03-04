@@ -1,23 +1,22 @@
 import React, { Component } from 'react'
 import { Rate } from 'antd';
 class Comentario extends Component{
-  construtor(props){
-    super(props);
-  }
+
   render(){
     return(
       <div>
-        <span>
-          {this.props.usuario}
+        <span style={{ height: "22vh", paddingRight:"10px"}}>
+          <b>{this.props.nombre}</b>
         </span>
         <span>
-          <Rate disabled defaultValue={this.props.puntos}} />
+          <Rate disabled defaultValue={this.props.puntos} />
         </span>
         <div>
-          Puntuación
+          {this.props.texto}
         </div>
       </div>
     );
   }
 
 }
+export default Comentario;

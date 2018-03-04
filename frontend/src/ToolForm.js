@@ -219,8 +219,6 @@ class ToolForm extends React.Component{
         return response.json();
       })
       .then((json) =>{
-        console.log(this.state.pp);
-        console.log(this.state.tipo);
         this.setState({bancos:json});
         this.showInfo();
       })
