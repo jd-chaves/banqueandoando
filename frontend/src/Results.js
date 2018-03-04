@@ -1,5 +1,5 @@
 import React from 'react';
-import { Icon, Card } from 'antd';
+import { Icon, Card, Rate } from 'antd';
 const { Meta } = Card;
 
 class Results extends React.Component {
@@ -12,7 +12,7 @@ class Results extends React.Component {
       >
       <Meta
       title={this.props.bankName}
-      description={[<Icon type="calculator" />, this.props.interes]}
+      description={[<Icon type="calculator" style={{ marginRight: "4px"}}/>, this.props.interes, <Rate disabled defaultValue={this.props.rate} style={{ float: "right", marginTop:"-5px", paddingRight:"-40px" }}/>]}
       />
       </Card>
     );
