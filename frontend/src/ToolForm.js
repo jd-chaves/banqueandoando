@@ -28,16 +28,53 @@ class ToolForm extends React.Component{
       <div className = "row" style={{ height: '100vh', width: "90vw",  margin: "0 auto"}}>
       <br></br>
 
-    {
-      this.state.bancos.map(
-        (b) =>
-        b.consumo.tipo1 !== -1 && this.state.tipo === "consumo" && this.state.pp === "tipo1" &&
-        (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo1}/></div>),
-        (b) =>
-        b.consumo.tipo1 !== -1 && this.state.tipo === "consumo" && this.state.pp === "tipo1" &&
-        (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo1}/></div>)
-      )
-    }
+      {(this.state.tipo === "consumo" && this.state.pp === "tipo1") &&
+        this.state.bancos.map(
+          (b) =>
+          b.consumo.tipo1 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo1}/></div>)
+      )}
+
+      {(this.state.tipo === "consumo" && this.state.pp === "tipo2") &&
+        this.state.bancos.map(
+          (b) =>
+          b.consumo.tipo2 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo2}/></div>)
+      )}
+
+      {(this.state.tipo === "consumo" && this.state.pp === "tipo3") &&
+        this.state.bancos.map(
+          (b) =>
+          b.consumo.tipo3 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo3}/></div>)
+      )}
+
+      {(this.state.tipo === "consumo" && this.state.pp === "tipo4") &&
+        this.state.bancos.map(
+          (b) =>
+          b.consumo.tipo4 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.consumo.tipo4}/></div>)
+      )}
+
+      {(this.state.tipo === "preferencial" && this.state.pp === "tipo1") &&
+        this.state.bancos.map(
+          (b) =>
+          (typeof b.preferencial !== 'undefined' && b.preferencial.tipo1 !== -1) && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo1}/></div>)
+      )}
+
+      {(this.state.tipo === "preferencial" && this.state.pp === "tipo2") &&
+        this.state.bancos.map(
+          (b) =>
+          b.preferencial.tipo2 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo2}/></div>)
+      )}
+
+      {(this.state.tipo === "preferencial" && this.state.pp === "tipo3") &&
+        this.state.bancos.map(
+          (b) =>
+          b.preferencial.tipo3 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo3}/></div>)
+      )}
+
+      {(this.state.tipo === "preferencial" && this.state.pp === "tipo4") &&
+        this.state.bancos.map(
+          (b) =>
+          b.preferencial.tipo4 !== -1 && (<div  key ={b._id} className = "col-sm-3"><Results imgUrl={b.imagen} bankName={b.nombre} interes={b.preferencial.tipo4}/></div>)
+      )}
 
     <br></br>
     </div>, document.getElementById('resultadosBusqueda'));
@@ -62,6 +99,8 @@ class ToolForm extends React.Component{
         return response.json();
       })
       .then((json) =>{
+        console.log(this.state.pp);
+        console.log(this.state.tipo);
         this.setState({bancos:json});
         this.showInfo();
       })
@@ -98,7 +137,7 @@ class ToolForm extends React.Component{
         </Select>
       </FormItem>
       {
-        (this.state.tipo === "consumo" || this.state.tipo === "preferencial" || this.state.tipo === "microcredito") && (
+        (this.state.tipo === "consumo" || this.state.tipo === "preferencial" || this.state.tipo === "micro") && (
           <FormItem>
             <Select placeholder="Temporalidad" onChange={this.handleTempChange} >
             <Option value="tipo1">Entre 31 y 365 días</Option>
