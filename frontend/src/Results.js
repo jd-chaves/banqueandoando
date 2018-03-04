@@ -15,13 +15,12 @@ class Results extends React.Component {
 
             <Meta
               title={this.props.bankName}
-              description={this.props.interes}
-            />
-          </Card>
-          <ModalReferencias banco ={this.props.bankName}/>
-        </div>
-      );
+              description={[<Icon type="calculator" style={{ marginRight: "4px"}}/>, this.props.interes, <Rate disabled defaultValue={this.props.rate} style={{ float: "right", marginTop:"-5px", paddingRight:"-40px" }}/>]}            />
+            </Card>
+            <ModalReferencias banco ={this.props.bankName}/>
+          </div>
+        );
+      }
     }
-  }
 
-  export default Results;
+    export default Results;
