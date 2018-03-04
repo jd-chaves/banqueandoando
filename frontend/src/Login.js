@@ -31,7 +31,7 @@ class NormalLoginForm extends React.Component {
         'Content-Type': 'application/json',
       },
       body: JSON.stringify(data)
-    })        .then((response) => response.json())
+    }).then((response) => response.json())
     .then((responseJson) => {
       if(!responseJson.success)
       this.setState({mU:responseJson.message});
