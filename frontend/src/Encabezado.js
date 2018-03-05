@@ -43,12 +43,10 @@ render() {
             <h2 className="nino-sectionHeading" style={{fontSize: '2vw !important', lineHeight: '1.4 !important'}}>
               <span className="nino-subHeading">¿Qué es Banqueando?</span>
               <br></br>
-              Esta apliación fue desarrollada con el fin de brindar a los consumidores de <br></br>
-              productos financieros (en especial créditos) en Colombia, una herramienta para <br></br>
-              explorar alternativas, referenciar y revisar referencias de diferentes entidades <br></br>
-              bancarias y cumple con el proposito de presentar y hacer mucho más accequible la <br></br>
-              información que la super intendencia financiera publica en términos de tasas de <br></br>
-              interés para las diferentes modalidades de crédito en las diferentes entidades bancarias</h2>
+              ORIENTAMOS TU DECISIÓN SOBRE QUÉ BANCO ESCOGER PARA ACCEDER AL CRÉDITO QUE NECESITAS. PARAMETRIZA TU BÚSQUEDA EN <br></br>
+              LA VENTANA “HERRAMIENTA” Y CALCULAMOS POR TI LO QUE PAGARÍAS EN LAS DISTINTAS ENTIDADES BANCARIAS POR TU CRÉDITO. <br></br>
+              TU ELIGES! REGISTRATE PARA REFERENCIAR Y PUNTUAR BANCOS. ADEMÁS PODRAS VER REFERENCIAS REALIZADAS POR OTROS USUARIOS <br></br>
+              Y LAS PUNTUACIONES DADAS.</h2>
               </div>
               <div className="item">
                 <h2 className="nino-sectionHeading">
