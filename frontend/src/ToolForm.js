@@ -5,6 +5,9 @@ import Results from './Results';
 import { Form, Select, Button, InputNumber, Popover } from 'antd';
 import { Checkbox } from 'antd';
 
+/* En todo el codigo (otros archivos bajo /frontend/src tambien) se aplican muchos estilos usando la propiedad de los tags 
+y no un archivo CSS (A muchos elementos se le aplican los mismos estilos). Se recomienda usar CSS para aplciar estos estilos
+a dichos elementos*/
 
 const FormItem = Form.Item;
 const Option = Select.Option;
