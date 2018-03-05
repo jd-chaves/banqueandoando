@@ -1,5 +1,5 @@
 # Banqueando
-Esta apliación fue desarrollada con el fin de brindar a los consumidores de productos financieros (en especial créditos) en Colombia, una herramienta para explorar alternativas, referenciar y revisar referencias de diferentes entidades bancarias y cumple con el proposito de presentar y hacer mucho más accequible la información que la super intendencia financiera publica en términos de tasas de interés para las diferentes modalidades de crédito en las diferentes entidades bancarias. Visite la aplicación en [banqueando.tk](http://banqueando.tk)
+Construimos Banqueando pensando en las necesidades de los consumidores de productos financieros. La plataforma permite buscar créditos por modalidades y parametrizar dichas búsquedas para obtener como resultado información concisa y de interés para el usuario: Cuánto va a pagar, en las distintas entidades bancarias, por acceder al crédito que le interesa. Además, permite a los usuarios referenciar entidades bancarias y puntuarlas además de poder consultar referencias y puntuaciones realizadas por otros usuarios. Persigue el propósito de orientar la decisión sobre qué banco escoger, qué modalidad, qué temporalidad, etc. [banqueando.tk](https://banqueando.herokuapp.com)
 
 ## Características
 
