@@ -5,6 +5,7 @@ class Comentario extends Component{
   render(){
     return(
       <div>
+        {/*Se recomienda separar los estilos de los elementos en otro archivo*/}
         <span style={{ height: "22vh", paddingRight:"10px"}}>
           <b>{this.props.nombre}</b>
         </span>
